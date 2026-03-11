@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import imageDeFond from '../assets/products/image_de_fond.png';
+import shelf01 from '../assets/sante_tonique_shelf01.JPG';
 ---
 
 <BaseLayout
@@ -16,7 +17,7 @@ import imageDeFond from '../assets/products/image_de_fond.png';
         <div class="eyebrow">Fort-de-France, Martinique · Depuis 1995</div>
         <h1>
           La santé naturelle,<br />
-          <em>en famille depuis 1995</em>
+          <em>en famille...</em>
         </h1>
         <p class="hero__sub">
           Compléments alimentaires, alimentation bio et cosmétiques naturels —
@@ -52,15 +53,6 @@ import imageDeFond from '../assets/products/image_de_fond.png';
                 <span>Cosmétiques naturels</span>
               </div>
             </div>
-            <div class="hero__card-image">
-              <Image
-                src={imageDeFond}
-                alt="Produits naturels Santé Tonique"
-                width={360}
-                height={220}
-                loading="eager"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -93,10 +85,11 @@ import imageDeFond from '../assets/products/image_de_fond.png';
         <div class="about-strip__image reveal">
           <div class="about-strip__img-wrap">
             <Image
-              src={imageDeFond}
+              src={shelf01}
               alt="La boutique Santé Tonique à Fort-de-France"
-              width={480}
-              height={380}
+              width={960}
+              height={720}
+              quality={90}
             />
           </div>
         </div>

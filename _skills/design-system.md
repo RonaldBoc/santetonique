@@ -270,7 +270,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   - ✅ Values: Intégrité · Bienveillance · Naturel
   - ❌ Bible verses, explicit "God" references, religious imagery
 - **Avoid**: Marketing hyperbole, superlatives, fake urgency
-- **Stats to highlight**: Founded 2001, Fort-de-France, family business, 100% natural products
+- **Stats to highlight**: Founded 1995, Fort-de-France, family business, 100% natural products
 
 ---
 
@@ -286,7 +286,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 ### Home page sections (in order)
 1. **Nav** — fixed, backdrop-blur
 2. **Hero** — 2-col, headline + product categories card
-3. **About strip** — dark section, family story since 2001
+3. **About strip** — dark section, family story since 1995
 4. **Products** — 3-col category cards
 5. **Philosophy** — warm gradient, quote/blockquote
 6. **Contact** — address, phone, email, hours, map placeholder

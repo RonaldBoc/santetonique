@@ -146,7 +146,7 @@ For this specific project, apply these rules alongside the `design-system.md` sk
 
 **The hero H1 should communicate**:
 > Santé Tonique sells natural health products (dietary supplements, organic food, natural cosmetics)
-> in Fort-de-France, Martinique — a trusted family business since 2001.
+> in Fort-de-France, Martinique — a trusted family business since 1995.
 
 The H1 doesn't need to say all of this — but the hero section (H1 + subheadline + visual context) must convey it.
 

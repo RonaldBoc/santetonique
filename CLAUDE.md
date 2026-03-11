@@ -3,7 +3,7 @@
 ## Project Overview
 
 Santé Tonique est une boutique familiale de produits diététiques et de santé naturelle, située à
-Fort-de-France, Martinique. Fondée en 2001. Famille adventiste — la spiritualité est présente
+Fort-de-France, Martinique. Fondée en 1995. Famille adventiste — la spiritualité est présente
 mais subtile (valeurs, formulations, jamais de texte religieux explicite).
 
 Le site est **uniquement informatif** — pas d'e-commerce, pas de panier, pas de bouton d'achat.
@@ -90,14 +90,14 @@ Accueil | À propos | Nos produits | Contact | Blog
 Sections dans l'ordre :
 1. Nav fixe avec backdrop-blur
 2. Hero — 2 colonnes, titre + carte catégories produits
-3. À propos strip — section sombre, histoire familiale depuis 2001
+3. À propos strip — section sombre, histoire familiale depuis 1995
 4. Nos produits — 3 colonnes, cartes catégories
 5. Philosophie — gradient chaud, citation/blockquote
 6. Contact rapide — adresse, téléphone, email, lien vers page contact
 7. Footer — logo, copyright, valeurs
 
 ### À propos (`/a-propos`)
-- Histoire de la famille depuis 2001
+- Histoire de la famille depuis 1995
 - Valeurs (Intégrité · Bienveillance · Naturel · Ancrage local)
 - La dimension spirituelle : formulée à travers les valeurs, jamais de versets ni de mentions religieuses explicites
 - Photo de la boutique / famille (placeholder `image_de_fond.png` jusqu'à réception)
