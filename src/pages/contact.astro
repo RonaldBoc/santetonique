@@ -96,7 +96,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             Vous avez une question sur un produit, un conseil santé ? N'hésitez pas à nous écrire.
           </p>
 
-          <form class="contact-form" name="contact" method="POST" novalidate>
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="d33293cb-a394-4cc2-9e9a-71c823982116" />
+            <input type="hidden" name="subject" value="Nouveau message — Santé Tonique" />
+            <input type="hidden" name="redirect" value="false" />
+            <input type="checkbox" name="botcheck" style="display:none" />
+
             <div class="form-field">
               <label for="nom" class="form-label">Nom complet <span aria-hidden="true">*</span></label>
               <input
@@ -138,6 +143,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <button type="submit" class="btn-primary form-submit">
               Envoyer le message
             </button>
+
+            <div class="form-feedback form-feedback--success" id="form-success" hidden>
+              Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.
+            </div>
+            <div class="form-feedback form-feedback--error" id="form-error" hidden>
+              Une erreur s'est produite. Veuillez réessayer ou nous appeler directement.
+            </div>
           </form>
         </div>
 
@@ -296,9 +308,71 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     align-self: flex-start;
     cursor: pointer;
   }
+  .form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .form-feedback {
+    font-size: 0.88rem;
+    padding: 0.8rem 1rem;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+  }
+  .form-feedback--success {
+    background: rgba(122, 140, 94, 0.12);
+    color: var(--sage);
+    border: 1px solid rgba(122, 140, 94, 0.3);
+  }
+  .form-feedback--error {
+    background: rgba(200, 115, 42, 0.08);
+    color: var(--terra);
+    border: 1px solid rgba(200, 115, 42, 0.2);
+  }
 
   @media (max-width: 900px) {
     .page-hero { padding: calc(72px + 3rem) 1.5rem 2.5rem; }
     .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
   }
 </style>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('.contact-form');
+  const submitBtn = form?.querySelector<HTMLButtonElement>('.form-submit');
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours…';
+    }
+    successMsg && (successMsg.hidden = true);
+    errorMsg && (errorMsg.hidden = true);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        successMsg && (successMsg.hidden = false);
+        form.reset();
+      } else {
+        errorMsg && (errorMsg.hidden = false);
+      }
+    } catch {
+      errorMsg && (errorMsg.hidden = false);
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer le message';
+      }
+    }
+  });
+</script>
