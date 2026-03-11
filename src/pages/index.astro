@@ -1,49 +1,579 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import imageDeFond from '../assets/products/image_de_fond.png';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout
+  title="Santé Tonique"
+  description="Boutique familiale de produits diététiques et de santé naturelle à Fort-de-France, Martinique. Fondée en 2001."
+>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero__bg-shape" aria-hidden="true"></div>
+    <div class="hero__content">
+      <div class="hero__left">
+        <div class="eyebrow">Fort-de-France, Martinique · Depuis 2001</div>
+        <h1>
+          La santé naturelle,<br />
+          <em>en famille depuis 2001</em>
+        </h1>
+        <p class="hero__sub">
+          Compléments alimentaires, alimentation bio et cosmétiques naturels —
+          une boutique de confiance au cœur de Fort-de-France.
+        </p>
+        <div class="hero__actions">
+          <a href="/nos-produits" class="btn-primary">Voir nos produits</a>
+          <a href="/contact" class="btn-secondary">Nous trouver</a>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="hero__card">
+          <div class="hero__card-inner">
+            <div class="hero__card-eyebrow">Nos catégories</div>
+            <div class="hero__categories">
+              <div class="hero__cat">
+                <span class="hero__cat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                </span>
+                <span>Compléments alimentaires</span>
+              </div>
+              <div class="hero__cat">
+                <span class="hero__cat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                </span>
+                <span>Alimentation bio & diététique</span>
+              </div>
+              <div class="hero__cat">
+                <span class="hero__cat-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+                </span>
+                <span>Cosmétiques naturels</span>
+              </div>
+            </div>
+            <div class="hero__card-image">
+              <Image
+                src={imageDeFond}
+                alt="Produits naturels Santé Tonique"
+                width={360}
+                height={220}
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== À PROPOS STRIP ===== -->
+  <section class="section section--dark about-strip">
+    <div class="container">
+      <div class="about-strip__grid">
+        <div class="about-strip__text reveal">
+          <div class="eyebrow eyebrow--light">Notre histoire</div>
+          <h2>Une boutique familiale,<br /><em>depuis 2001</em></h2>
+          <p>
+            Santé Tonique a ouvert ses portes à Fort-de-France en 2001. Fondée avec conviction,
+            notre boutique est née d'une idée simple : prendre soin de son corps est un geste
+            de bienveillance envers soi-même et ses proches.
+          </p>
+          <p>
+            Depuis plus de 20 ans, nous sélectionnons avec soin des produits naturels pour vous
+            accompagner dans votre démarche de bien-être — compléments, bio, cosmétiques naturels.
+          </p>
+          <div class="about-strip__chips">
+            <span class="value-chip">Intégrité</span>
+            <span class="value-chip">Bienveillance</span>
+            <span class="value-chip">Naturel</span>
+            <span class="value-chip">Ancrage local</span>
+          </div>
+        </div>
+        <div class="about-strip__image reveal">
+          <div class="about-strip__img-wrap">
+            <Image
+              src={imageDeFond}
+              alt="La boutique Santé Tonique à Fort-de-France"
+              width={480}
+              height={380}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOS PRODUITS ===== -->
+  <section class="section section--products">
+    <div class="container">
+      <div class="products-header reveal">
+        <div class="eyebrow">Ce que nous proposons</div>
+        <h2>Nos <em>catégories de produits</em></h2>
+        <p class="products-header__sub">
+          Des produits sélectionnés pour leur qualité et leur naturalité.
+        </p>
+      </div>
+      <div class="products-grid">
+        <article class="product-card reveal">
+          <div class="product-card__banner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          </div>
+          <div class="product-card__body">
+            <h3>Compléments alimentaires</h3>
+            <p>Vitamines, minéraux et plantes médicinales pour soutenir votre vitalité au quotidien.</p>
+            <a href="/nos-produits" class="product-card__link">
+              Découvrir
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-card__banner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          </div>
+          <div class="product-card__body">
+            <h3>Alimentation bio & diététique</h3>
+            <p>Des produits certifiés bio et diététiques pour une alimentation saine et équilibrée.</p>
+            <a href="/nos-produits" class="product-card__link">
+              Découvrir
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card reveal">
+          <div class="product-card__banner">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+          </div>
+          <div class="product-card__body">
+            <h3>Cosmétiques naturels</h3>
+            <p>Prenez soin de votre peau avec des soins formulés à partir d'ingrédients d'origine naturelle.</p>
+            <a href="/nos-produits" class="product-card__link">
+              Découvrir
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PHILOSOPHIE ===== -->
+  <section class="section section--warm philosophie">
+    <div class="container">
+      <div class="philosophie__inner reveal">
+        <span class="philosophie__accent" aria-hidden="true">✦</span>
+        <div class="eyebrow">Notre philosophie</div>
+        <blockquote class="philosophie__quote">
+          "Prendre soin de son corps, c'est un acte de gratitude. Nous croyons en des choix
+          simples, naturels et bienveillants — pour vous et pour ceux que vous aimez."
+        </blockquote>
+        <cite class="philosophie__author">— La famille Santé Tonique</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT RAPIDE ===== -->
+  <section class="section contact-rapide">
+    <div class="container">
+      <div class="contact-rapide__grid">
+        <div class="contact-rapide__text reveal">
+          <div class="eyebrow">Venez nous rendre visite</div>
+          <h2>Nous sommes <em>à Fort-de-France</em></h2>
+          <p>
+            Notre boutique est ouverte du lundi au vendredi. N'hésitez pas à passer nous voir
+            ou à nous appeler pour toute question sur nos produits.
+          </p>
+          <a href="/contact" class="btn-primary">Voir le plan d'accès</a>
+        </div>
+        <div class="contact-rapide__info reveal">
+          <div class="contact-info-item">
+            <span class="contact-info-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <strong>Adresse</strong>
+              <p>Fort-de-France, Martinique, 97200</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 10.85 19.79 19.79 0 0 1 1.08 2.18 2 2 0 0 1 3.06.02h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 7.91a16 16 0 0 0 5 5l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 13.92v3z"/></svg>
+            </span>
+            <div>
+              <strong>Téléphone</strong>
+              <p><a href="tel:+596596000000">+596 596 XX XX XX</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:contact@santetonique.com">contact@santetonique.com</a></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <div>
+              <strong>Horaires</strong>
+              <p>Lun – Ven : 8h00 – 17h00</p>
+              <p>Samedi : 8h00 – 13h00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: calc(72px + 4rem) 5rem 4rem;
+    background: linear-gradient(135deg, #F5E6C8, #E8D09A);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero__bg-shape {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+    height: 520px;
+    border-radius: 60% 0 0 50% / 50% 0 0 60%;
+    background: rgba(61, 43, 31, 0.05);
+    pointer-events: none;
+  }
+
+  .hero__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero__left h1 {
+    margin: 0.4rem 0 1.2rem;
+    color: var(--bark);
+  }
+
+  .hero__sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(61, 43, 31, 0.75);
+    max-width: 440px;
+    margin-bottom: 2rem;
+    line-height: 1.75;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Hero card */
+  .hero__card {
+    background: linear-gradient(145deg, #F9F0DC, #EFE0B8);
+    border-radius: 4px 60px 4px 60px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 60px rgba(61, 43, 31, 0.12);
+    position: relative;
+  }
+
+  .hero__card-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    color: var(--sage);
+    margin-bottom: 1.2rem;
+  }
+
+  .hero__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__cat {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--bark);
+  }
+
+  .hero__cat-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--honey), var(--terra));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .hero__card-image {
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+  .hero__card-image img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  /* ===== ABOUT STRIP ===== */
+  .about-strip__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-strip__text h2 {
+    color: var(--cream);
+    margin: 0.4rem 0 1.2rem;
+  }
+  .about-strip__text h2 em {
+    color: var(--gold);
+  }
+
+  .about-strip__text p {
+    color: rgba(245, 237, 217, 0.75);
+    margin-bottom: 0.8em;
+  }
+
+  .about-strip__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.8rem;
+  }
+
+  .about-strip__img-wrap {
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+  }
+  .about-strip__img-wrap img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
+
+  /* ===== PRODUCTS ===== */
+  .products-header {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 3.5rem;
+  }
+  .products-header .eyebrow {
+    justify-content: center;
+  }
+  .products-header h2 { color: var(--bark); margin-bottom: 0.6rem; }
+  .products-header__sub {
+    color: rgba(61, 43, 31, 0.65);
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .product-card {
+    background: #fff;
+    border: 1px solid rgba(200, 115, 42, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(61, 43, 31, 0.1);
+  }
+
+  .product-card__banner {
+    background: linear-gradient(135deg, #F5E6C8, #E8D09A);
+    padding: 2rem;
+    color: var(--honey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+  }
+
+  .product-card__body {
+    padding: 1.5rem;
+  }
+  .product-card__body h3 {
+    font-size: 1.1rem;
+    color: var(--bark);
+    margin-bottom: 0.6rem;
+  }
+  .product-card__body p {
+    font-size: 0.88rem;
+    color: rgba(61, 43, 31, 0.7);
+    line-height: 1.65;
+    margin-bottom: 1.2rem;
+  }
+
+  .product-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--honey);
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .product-card__link:hover { gap: 0.6rem; }
+
+  /* ===== PHILOSOPHIE ===== */
+  .philosophie__inner {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .philosophie__accent {
+    display: block;
+    font-size: 2rem;
+    color: var(--honey);
+    margin-bottom: 1rem;
+  }
+
+  .philosophie__quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    color: var(--bark);
+    line-height: 1.6;
+    margin: 0.8rem 0 1.2rem;
+    border: none;
+    padding: 0;
+  }
+
+  .philosophie__author {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terra);
+    font-weight: 400;
+  }
+
+  /* ===== CONTACT RAPIDE ===== */
+  .contact-rapide__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-rapide__text h2 {
+    color: var(--bark);
+    margin: 0.4rem 0 1rem;
+  }
+  .contact-rapide__text p {
+    color: rgba(61, 43, 31, 0.7);
+    margin-bottom: 1.8rem;
+  }
+
+  .contact-rapide__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-info-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .contact-info-item__icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #F5E6C8, #E8D09A);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--honey);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .contact-info-item strong {
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--bark);
+    margin-bottom: 0.2rem;
+  }
+  .contact-info-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(61, 43, 31, 0.7);
+  }
+  .contact-info-item a {
+    color: var(--honey);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-info-item a:hover { color: var(--terra); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero {
+      padding: calc(72px + 2rem) 1.5rem 2.5rem;
+      min-height: auto;
+    }
+    .hero__content {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .hero__bg-shape { display: none; }
+
+    .about-strip__grid,
+    .contact-rapide__grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+    .about-strip__img-wrap img {
+      height: 260px;
+    }
+  }
+</style>

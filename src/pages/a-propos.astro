@@ -1,0 +1,252 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import imageDeFond from '../assets/products/image_de_fond.png';
+---
+
+<BaseLayout
+  title="À propos"
+  description="Santé Tonique, boutique familiale de santé naturelle à Fort-de-France depuis 2001. Découvrez notre histoire et nos valeurs."
+>
+  <!-- Hero bannière -->
+  <section class="page-hero">
+    <div class="page-hero__inner">
+      <div class="eyebrow">Notre histoire</div>
+      <h1>Une boutique familiale,<br /><em>fondée avec conviction</em></h1>
+      <p class="page-hero__sub">
+        Fort-de-France, Martinique · Depuis 2001
+      </p>
+    </div>
+  </section>
+
+  <!-- Histoire -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-grid__image reveal">
+          <div class="about-img-wrap">
+            <Image
+              src={imageDeFond}
+              alt="La boutique Santé Tonique à Fort-de-France"
+              width={540}
+              height={440}
+            />
+          </div>
+        </div>
+        <div class="about-grid__text reveal">
+          <div class="eyebrow">Depuis 2001</div>
+          <h2>Une histoire de famille et <em>de conviction</em></h2>
+          <p>
+            Santé Tonique a ouvert ses portes à Fort-de-France en 2001. Fondée par une famille
+            avec une profonde conviction du lien entre bien-être physique et vie équilibrée,
+            notre boutique est née d'une idée simple : prendre soin de son corps, c'est un
+            geste de bienveillance envers soi-même.
+          </p>
+          <p>
+            Depuis plus de 20 ans, nous sélectionnons avec soin des produits naturels —
+            compléments alimentaires, alimentation bio et cosmétiques naturels — pour vous
+            accompagner dans votre démarche de bien-être, au quotidien.
+          </p>
+          <p>
+            Notre engagement : vous proposer des produits de qualité, honnêtes dans leur
+            composition, à des prix accessibles pour tous les Martiniquais.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valeurs -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="valeurs reveal">
+        <div class="eyebrow eyebrow--light">Ce qui nous guide</div>
+        <h2>Nos <em>valeurs</em></h2>
+        <div class="valeurs-grid">
+          <div class="valeur-item">
+            <span class="valeur-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </span>
+            <h3>Intégrité</h3>
+            <p>
+              Nous sélectionnons chaque produit avec honnêteté. Pas de promesses excessives,
+              des produits qui tiennent leurs engagements.
+            </p>
+          </div>
+          <div class="valeur-item">
+            <span class="valeur-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </span>
+            <h3>Bienveillance</h3>
+            <p>
+              Nous accueillons chaque client avec attention, prenons le temps de comprendre
+              ses besoins et de l'orienter avec soin.
+            </p>
+          </div>
+          <div class="valeur-item">
+            <span class="valeur-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            </span>
+            <h3>Naturel</h3>
+            <p>
+              Nous privilégions le naturel dans toutes ses formes — des ingrédients, des
+              formulations et des modes de vie qui respectent le corps et la nature.
+            </p>
+          </div>
+          <div class="valeur-item">
+            <span class="valeur-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3>Ancrage local</h3>
+            <p>
+              Fiers d'être une boutique martiniquaise, nous servons notre communauté locale
+              avec le même soin depuis plus de 20 ans.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophie -->
+  <section class="section section--warm">
+    <div class="container">
+      <div class="philosophie-block reveal">
+        <span class="philo-accent" aria-hidden="true">✦</span>
+        <blockquote>
+          "Prendre soin de son corps, c'est un acte de gratitude. Nous croyons que chaque
+          choix naturel est un pas vers une vie plus équilibrée et plus épanouie."
+        </blockquote>
+        <cite>— La famille Santé Tonique</cite>
+        <div class="philo-cta">
+          <a href="/contact" class="btn-primary">Venez nous rendre visite</a>
+          <a href="/nos-produits" class="btn-secondary">Voir nos produits</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #F5E6C8, #E8D09A);
+    padding: calc(72px + 5rem) 5rem 4rem;
+    text-align: center;
+  }
+  .page-hero__inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .page-hero .eyebrow { justify-content: center; }
+  .page-hero h1 { color: var(--bark); margin: 0.5rem 0 1rem; }
+  .page-hero__sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--terra);
+    margin: 0;
+  }
+
+  /* About grid */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-img-wrap {
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .about-img-wrap img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+  }
+  .about-grid__text h2 { color: var(--bark); margin: 0.4rem 0 1.2rem; }
+  .about-grid__text p { color: rgba(61, 43, 31, 0.75); }
+
+  /* Valeurs */
+  .valeurs h2 { color: var(--cream); margin: 0.4rem 0 2.5rem; }
+  .valeurs h2 em { color: var(--gold); }
+
+  .valeurs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .valeur-item {
+    background: rgba(245, 237, 217, 0.05);
+    border: 1px solid rgba(245, 237, 217, 0.1);
+    border-radius: 3px;
+    padding: 2rem;
+  }
+  .valeur-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(212, 168, 82, 0.15);
+    border-radius: 50%;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .valeur-item h3 {
+    color: var(--cream);
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+  .valeur-item p {
+    color: rgba(245, 237, 217, 0.65);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  /* Philosophie */
+  .philosophie-block {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .philo-accent {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--honey);
+    margin-bottom: 1rem;
+  }
+  .philosophie-block blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    color: var(--bark);
+    line-height: 1.65;
+    margin: 0 0 1rem;
+    border: none;
+    padding: 0;
+  }
+  .philosophie-block cite {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 2rem;
+  }
+  .philo-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 900px) {
+    .page-hero { padding: calc(72px + 3rem) 1.5rem 2.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-img-wrap img { height: 260px; }
+    .valeurs-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,5 +1,5 @@
 {
-  "name": "cyan-cloud",
+  "name": "santetonique",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -16,6 +16,7 @@
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.1",
     "astro": "^6.0.2",
+    "gsap": "^3.14.2",
     "sharp": "^0.34.3"
   }
 }
